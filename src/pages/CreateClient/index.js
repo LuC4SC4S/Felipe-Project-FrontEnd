@@ -10,39 +10,43 @@ import './styles.css';
 function CreateClient() {
     const [name, setName] = useState('');
     const [cel, setCel] = useState('');
-    const [star, setStar] = useState(0);
+    const [stars, setStars] = useState(0);
     const [product, setProduct] = useState('');
     const [observation, setObservation] = useState('');
     const [city, setCity] = useState('');
+    const longitude = -22.40161;
+    const latitude = -44.255861;
 
     const history = useHistory();
 
-    function HandleSubmit(e){
+    async function HandleSubmit(e){
         e.preventDefault();
 
         const data = {
             name,
             cel,
-            star,
+            stars,
             product,
             observation,
+            longitude,
+            latitude,
             city
-        }
+        };
 
         try {
-            const response = await api.post('create', data);
+            const response = await api.post('cadastro', data);
 
-            alert(`Cliente ${response.data.name} cadastrado com sucesso!`);
+            alert(`Cliente ${name} cadastrado com sucesso!`);
             history.push('/')
         }catch (err){
-            alert('Erro no cadastro, tente novamente.');
-        }
+            alert(err);
+        };
     }
 
 
     return(
         <div id="page-create">
-            <form>
+            <form onSubmit={HandleSubmit}>
                 <div id="form-main">
                     <h1>Informações do Cliente</h1>
                     
@@ -53,6 +57,8 @@ function CreateClient() {
                                 type="text"
                                 name="name"
                                 id="name"
+                                value={name}
+                                onChange = {e => setName(e.target.value)}
                             />
                         </div>
                         <div className="field">
@@ -61,6 +67,8 @@ function CreateClient() {
                                 type="text"
                                 name="cel"
                                 id="cel"
+                                value={cel}
+                                onChange = {e => setCel(e.target.value)}
                             />
                         </div>
                         <div className="field">
@@ -68,9 +76,11 @@ function CreateClient() {
                             <input 
                                 type="range"
                                 min="0" 
-                                max="100"
+                                max="5"
                                 name="classification"
                                 id="classification"
+                                value={stars}
+                                onChange = {e => setStars(e.target.value)}
                             />
                         </div>
                     </fieldset>
@@ -83,6 +93,8 @@ function CreateClient() {
                                 type="text"
                                 name="product"
                                 id="product"
+                                value={product}
+                                onChange = {e => setProduct(e.target.value)}
                             />
                         </div>
                         <div className="field">
@@ -91,6 +103,8 @@ function CreateClient() {
                                 name="observation"
                                 id="observation"
                                 rows="5"
+                                value={observation}
+                                onChange = {e => setObservation(e.target.value)}
                             />
                         </div>
                     </fieldset>
@@ -104,6 +118,17 @@ function CreateClient() {
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
                     </Map>
+
+                    <div className="field">
+                        <label htmlFor="cel">Cidade do Cliente</label>
+                        <input 
+                            type="text"
+                            name="city"
+                            id="city"
+                            value={city}
+                            onChange = {e => setCity(e.target.value)}
+                        />
+                    </div>
                 
                 </div>
                 <button type="submit">Cadastrar</button>
