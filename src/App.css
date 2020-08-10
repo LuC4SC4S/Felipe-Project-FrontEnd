@@ -8,3 +8,7 @@ body, button {
     background: #F8F7F7;
     font-family: Roboto, Arial, Helvetica, sans-serif;
 }
+
+ul {
+    list-style: none;
+}

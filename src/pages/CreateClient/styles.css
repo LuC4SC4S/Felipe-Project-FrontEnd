@@ -6,9 +6,19 @@
     margin: 50px auto;
     padding: 80px;
     padding-top: 0;
+}
 
+#page-create form #pseudo-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+}
+
+#page-create form #form-main {
+    flex: 1;
+}
+
+#page-create form #form-main:first-child {
+    margin-right: 30px;
 }
 
 #page-create form h1 {
@@ -44,6 +54,7 @@
     padding: 16px 24px;
     font-size: 16px;
     color: #6C6C80;
+    resize: none;
 }
 
 #page-create form fieldset legend {
@@ -54,24 +65,20 @@
     margin-bottom: 40px;
 }
 
-#page-create form #form-main {
-    flex: 50%;
+ 
+#page-create form #form-main .map {
     width: 50%;
-}
-/* 
-Arrumar o tamanho do mapa
-#page-create form #form-main .leaflet-container {
-    width: 50%;
-    height: 500px;
+    height: 550px;
     border-radius: 8px;
     margin-bottom: 24px;
 } 
-*/
 
-#page-create form button {
+
+#page-create button {
     width: 100%;
     height: 40px;
     margin-top: 20px;
+    display: block;
 
     background: #1EC90F;
     font-weight: bold;

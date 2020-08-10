@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import './styles.css';
+import Footer from '../../components/Footer';
 
 const Home = () => {
     return(
         <div id="page-home">
             <div className="content">
-                <header>
+                <section>
                     <h1>Projeto Felipe</h1>
-                </header>
+                </section>
                 <main>
                     <Link to="/cadastrar">
                         <button>CADASTRAR CLIENTE</button>
@@ -21,6 +23,7 @@ const Home = () => {
                     </Link>
                 </main>
             </div>
+            <Footer />
         </div>
     );
 };

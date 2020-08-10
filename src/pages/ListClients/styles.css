@@ -10,12 +10,12 @@
     padding: 0 30px;
 }
 
-#page-list .content header {
+#page-list .content section {
     text-align: center;
     margin: 50px;
 }
 
-#page-list .content header h1 {
+#page-list .content section h1 {
     margin-top: 20px;
     margin-bottom: 24px;
     font-size: 40px;
@@ -25,7 +25,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 24px;
-    list-style: none;
 }
 
 #page-list .content ul li {

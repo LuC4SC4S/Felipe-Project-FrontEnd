@@ -1,8 +1,10 @@
 import React, { useEffect, useState} from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
 import './styles.css';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
 
 function ListClients() {
     const [clients, setClients] = useState([]);
@@ -16,10 +18,11 @@ function ListClients() {
 
     return(
         <div id="page-list">
+            <Header />
             <div className="content">
-                <header>
+                <section>
                     <h1>Sua Lista de Clientes</h1>
-                </header>
+                </section>
                 
                 <ul>
                     {clients.map(client =>(
@@ -47,6 +50,7 @@ function ListClients() {
                     ))} 
                 </ul>
             </div>
+            <Footer />
         </div>
     );
 };

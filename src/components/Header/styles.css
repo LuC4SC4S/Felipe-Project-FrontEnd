@@ -1,0 +1,29 @@
+header {
+    background-color: #F0F0F5;
+    line-height: 1.5;
+    font-size: 20px;
+}
+
+header a {
+    color: black;
+    text-decoration: none;
+}
+
+header a:hover {
+    opacity: 0.9;
+}
+
+.hd-legal {
+    padding: 0.9375rem 1.875rem;
+}
+
+.hd-legal-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hd-legal-list li {
+    margin: 0.125rem 0.625rem;
+    white-space: nowrap;
+}
