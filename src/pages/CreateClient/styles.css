@@ -8,11 +8,23 @@
     padding-top: 0;
 }
 
+@media screen and ( max-width : 500px) {
+    #page-create form {
+        padding: 20px;
+    }
+}
+
 #page-create form #pseudo-form {
     display: flex;
     flex-direction: row;
 }
 
+@media screen and ( max-width : 500px) {
+    #page-create form #pseudo-form {
+        flex-direction: column;
+        margin: auto;
+    }
+}
 #page-create form #form-main {
     flex: 1;
 }
